@@ -1,7 +1,7 @@
 NAME = ${DISTRO_NAME}
 VER = ${VERSION}
 
-setup: config 
+setup: 
 	lb config \
 	--apt apt \
 	--apt-pipeline 1 \
@@ -19,7 +19,7 @@ import-config: archived_config.zip config
 	cp -o archived_config.zip
 delete-config: archived_config.zip
 	rm -f archived_config.zip
-export-config: setup
+export-config:
 	7z a archived_config.zip config
 
 build: setup
